@@ -1,11 +1,18 @@
-const express = require('express');
-const { addExpense, getExpenses, updateExpense, deleteExpense } = require('../controllers/expenseController');
-const { authenticate } = require('../middleware/authMiddleware');
+import express from 'express';
 const router = express.Router();
+import auth from '../middleware/auth.js';
+import {
+    getAllExpenses,
+    getExpenseById,
+    addExpense,
+    updateExpense,
+    deleteExpense
+} from '../controllers/expenseController.js';
 
-router.post('/', authenticate, addExpense);
-router.get('/', authenticate, getExpenses);
-router.put('/:id', authenticate, updateExpense);
-router.delete('/:id', authenticate, deleteExpense);
+router.get('/', auth, getAllExpenses);
+router.get('/:id', auth, getExpenseById);
+router.post('/', auth, addExpense);
+router.put('/:id', auth, updateExpense);
+router.delete('/:id', auth, deleteExpense);
 
-module.exports = router;
+export default router;
