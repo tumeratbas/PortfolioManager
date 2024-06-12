@@ -17,8 +17,7 @@ Bu talimatlar, projenin yerel makinenizde nasıl çalıştırılacağı açıkla
 1. Projeyi klonlayın:
 
     ```sh
-    git clone https://github.com/yourusername/finance-management-platform.git
-    cd finance-management-platform
+    git clone https://github.com/tumeratbas/PortfolioManager.git
     ```
 
 2. Gerekli paketleri yükleyin:
